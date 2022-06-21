@@ -1,0 +1,38 @@
+<h3> Enter the User Details </h3>
+<div>
+
+    <form [formGroup]="dialogboxform">
+        <label> First Name: </label>
+        <input type="text" formControlName="First Name">
+        
+        <br> <br>
+        <label> Last Name: </label>
+        <input type="text" formControlName="Last Name" value="abc">
+        <br> <br>
+        <label> Date of Birth: </label>
+        <input type="date" formControlName="Date of Birth">
+        <br> <br>
+
+        <label for="gender"> Gender: </label>
+        <select for="gender" id="gender" formControlName="Gender" >
+            <option value="male"> Male </option>
+            <option value="female" > Female </option>
+            <option value="notSpectified" > Not Spectified </option>
+        </select>
+        <br> <br>
+        <label> Status: </label>
+        <select for="status" id="status" formControlName="Status" >
+            <option value="active"> Active </option>
+            <option value="suspended" > Suspended </option>
+        </select>
+    </form>
+</div>
+
+
+    
+
+<div mat-dialog-actions>
+    
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button  cdkFocusInitial   (click)="OKButton()" [disabled]> Ok </button>
+</div>
