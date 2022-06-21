@@ -1,0 +1,46 @@
+ <!-- <button class="list" mat-raised-button color="primary" (click)="getdata()">  list Users </button>  
+ --> 
+ <mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>User Details</span>
+  <span class="example-spacer"></span>
+  <button class="add" mat-raised-button color="primary" (click)="openDialog()" >  Add Users </button>
+</mat-toolbar>
+
+
+
+<table>
+  <thead>
+    <th> ID </th>
+    <th> FIRST NAME </th>
+    <th> LAST NAME </th>
+    <th> DATE OF BIRTH </th>
+    <th> GENDER </th>
+    <th> STATUS </th>
+    <th> ACTION </th>
+  </thead>
+    
+  <tbody>
+    <tr *ngFor="let data of dataprint;let i=index">
+      <td> {{ i+1 }} </td>
+      <td> {{ data["First Name"] }} </td>
+      <td> {{ data["Last Name"] }} </td>
+      <td> {{ data["Date of Birth"] }} </td>
+      <td> {{ data.Gender }} </td>
+      <td> {{ data.Status }} </td>
+      <td> 
+        <button mat-icon-button color="primary" (click)="edituser(i)"> 
+          <mat-icon> edit </mat-icon> 
+        </button>  
+        <button mat-icon-button color="warn" (click)="Deleteuser(i)"> 
+          <mat-icon> delete </mat-icon> 
+        </button>
+      </td>
+      
+
+    </tr>
+  </tbody>
+</table>
+
